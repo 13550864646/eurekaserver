@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c3p0-config>
+    <default-config>
+        <property name="driverClass">com.mysql.jdbc.Driver</property>
+        <property name="jdbcUrl">
+            jdbc:mysql://192.168.10.3:3306/aggregate
+        </property>
+        <!--用户名。Default: null-->
+        <property name="user">root</property>
+        <!--密码。Default: null-->
+        <property name="password">z142857t</property>
+
+        <!--当连接池中的连接耗尽的时候c3p0一次同时获取的连接数。Default: 3 -->
+        <property name="acquireIncrement">3</property>
+
+        <!--定义在从数据库获取新连接失败后重复尝试的次数。Default: 30 -->
+        <property name="acquireRetryAttempts">10</property>
+
+        <!--两次连接中间隔时间，单位毫秒。Default: 1000 -->
+        <property name="acquireRetryDelay">1000</property>
+
+
+        <property name="checkoutTimeout">30000</property>
+        <property name="idleConnectionTestPeriod">3600</property>
+        <property name="initialPoolSize">3</property>
+        <property name="maxIdleTime">60</property>
+        <!--如果设为true那么在取得连接的同时将校验连接的有效性。Default: false -->
+        <property name="testConnectionOnCheckin">true</property>
+        <property name="maxPoolSize">20</property>
+        <property name="minPoolSize">3</property>
+        <!--获取连接失败将会引起所有等待连接池来获取连接的线程抛出异常。但是数据源仍有效
+          保留，并在下次调用getConnection()的时候继续尝试获取连接。如果设为true，那么在尝试
+          获取连接失败后该数据源将申明已断开并永久关闭。Default: false-->
+        <property name="breakAfterAcquireFailure">false</property>
+        <property name="maxStatements">0</property>
+        <user-overrides user="swaldman">
+        </user-overrides>
+    </default-config>
+</c3p0-config>
